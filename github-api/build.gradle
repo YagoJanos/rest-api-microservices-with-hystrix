@@ -1,0 +1,26 @@
+plugins {
+	id 'org.springframework.boot' version '2.7.0'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+}
+
+group = 'com.github.yagojanos.jovenstalentos.cloud'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation 'com.netflix.hystrix:hystrix-core:1.5.18'
+	implementation 'com.netflix.hystrix:hystrix-metrics-event-stream:1.5.18'
+	implementation 'com.netflix.hystrix:hystrix-dashboard:1.5.18'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
